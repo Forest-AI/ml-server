@@ -1,5 +1,3 @@
-=======
-
 # ml-server
 
 ## Machine learning service hosted on IBM cloud foundry

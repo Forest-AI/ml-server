@@ -1,12 +1,15 @@
----
 applications:
-- instances: 1
-  timeout: 180
-  name: mlservice
-  buildpack: python_buildpack
-  command: python manage.py start 0.0.0.0:$PORT
-  memory: 64M
-  random-route: true
-  env:
-    FLASK_APP: server
-    FLASK_DEBUG: false
+  - buildpack: python_buildpack
+    command: python manage.py start 0.0.0.0:$PORT
+    domain: null
+    env:
+      FLASK_APP: server
+      FLASK_DEBUG: false
+    host: null
+    instances: 1
+    memory: 128M
+    name: mlservice
+    random-route: true
+    routes:
+      - route: ml-server.eu-gb.cf.appdomain.cloud
+    timeout: 180

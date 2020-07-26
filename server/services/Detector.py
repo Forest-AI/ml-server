@@ -17,7 +17,7 @@ class Detector(object):
     Loads the model from Database
     """
     def __init__(self):
-        self.__model = joblib.load('src//model_22_jul.pkl')
+        self.__model = joblib.load('model//model_22_jul.pkl')
         
     
     """

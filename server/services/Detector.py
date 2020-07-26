@@ -5,9 +5,11 @@ Created on Wed Jul 22 03:16:36 2020
 @author: Ratan Singh
 """
 
-import librosa
-import joblib
+from sklearn.externals import joblib
 import numpy as np
+from python_speech_features import mfcc
+import scipy.io.wavfile as wav
+
 
 class Detector(object):
     
@@ -15,23 +17,17 @@ class Detector(object):
     Loads the model from Database
     """
     def __init__(self):
-        self.__model = joblib.load('model//model_22_jul.pkl')
+        self.__model = joblib.load('src//model_22_jul.pkl')
         
     
     """
     Audio Feature Extraction
     """    
     def __extractFeatures(self, name):
-        try:
-            audio, sample_rate = librosa.load(name, res_type = 'kaiser_fast')
-            mfccs = librosa.feature.mfcc(y=audio, sr=sample_rate, n_mfcc = 40)
-            mfccs_scaled = np.mean(mfccs.T, axis = 0)
-        except Exception as e:
-            print("Exception occurred in reading file {}".format(name))
-            print(e)
-            return None
-        return mfccs_scaled
-
+        (rate,sig) = wav.read(name)
+        mfcc_feat = mfcc(sig,rate, nfft=2048)
+        mfcc_feat = np.mean(mfcc_feat, axis = 0)
+        return mfcc_feat
 
     """
     Argument : Path to Audio File

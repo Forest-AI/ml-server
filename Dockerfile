@@ -8,6 +8,7 @@ COPY Pipfile* /app/
 USER root
 RUN yum -y install python3
 RUN yum -y install python3-pip wget
+RUN yum -y install libsndfile
 
 RUN python3 -m pip install --upgrade pip \
   && python3 -m pip install --upgrade pipenv \

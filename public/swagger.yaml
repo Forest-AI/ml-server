@@ -11,20 +11,26 @@ produces:
   - application/json
 
 paths:
-  /health:
+  /predict:
     get:
+      parameters: 
+          - in: query
+            name: id
+            type: string
+            required: true
+            description: UUID of the audio clip sent from the Edge Device  
       operationId: get
-      description: Get health status of  
+      description: Get the prediction of chainsaw in the forest  
       responses:
         200:
-          description: "Health check response"
+          description: "Presence of Chainsaw response"
           schema:
-            $ref: "#/definitions/healthResponse"
+            $ref: "#/definitions/predictResponse"
           examples:
-            application/json: { "status": "UP"}
+            application/json: { "status": "1"}
 
 definitions:
-  healthResponse:
+  predictResponse:
     type: "object"
     properties:
       status:

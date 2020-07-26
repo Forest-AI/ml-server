@@ -1,4 +1,3 @@
-
 from server import app
 from flask import Response, request
 from prometheus_client import generate_latest, Counter

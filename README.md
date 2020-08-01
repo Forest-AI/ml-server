@@ -68,7 +68,6 @@ python manage.py start
 There are also a few utility commands:
 
 - `build`: compiles `.py` files within the project directory into `.pyc` files
-- `test`: runs all unit tests inside of the project's `test` directory
 
 Your application is running at: `http://localhost:3000/` in your browser.
 

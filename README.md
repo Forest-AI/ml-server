@@ -16,6 +16,10 @@
     <img src="https://img.shields.io/badge/license-Apache2-blue.svg?style=flat" alt="Apache 2">
 </p>
 
+
+
+# Our server is live at - [ML service](https://ml-server.eu-gb.cf.appdomain.cloud)
+
 # Deploy a Machine Learning Service application
 
 In this application, we will create a Machine Learning Service application which will take the audio samples uploaded by the wireless sensor networks spread across the forest and process it to predict if the the audio sample contains a chainsaw sound or not.

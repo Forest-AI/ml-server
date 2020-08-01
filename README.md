@@ -16,21 +16,15 @@
     <img src="https://img.shields.io/badge/license-Apache2-blue.svg?style=flat" alt="Apache 2">
 </p>
 
-# Create and deploy a Python Flask application
+# Deploy a Machine Learning Service application
 
-> We have applications available for [Node.js Express](https://github.com/IBM/node-express-app), [Go Gin](https://github.com/IBM/go-gin-app), [Python Flask](https://github.com/IBM/python-flask-app), [Python Django](https://github.com/IBM/python-django-app), [Java Spring](https://github.com/IBM/java-spring-app), [Java Liberty](https://github.com/IBM/java-liberty-app), [Swift Kitura](https://github.com/IBM/swift-kitura-app), [Android](https://github.com/IBM/android-app), and [iOS](https://github.com/IBM/ios-app).
+In this application, we will create a Machine Learning Service application which will take the audio samples uploaded by the wireless sensor networks spread across the forest and process it to predict if the the audio sample contains a chainsaw sound or not.
 
-In this sample application, you will create a Python cloud application using Flask. This application contains an opinionated set of files for web serving:
-
-- `public/index.html`
-- `public/404.html`
-- `public/500.html`
-
-This application also enables a starting place for a Python microservice using Flask. A microservice is an individual component of an application that follows the **microservice architecture** - an architectural style that structures an application as a collection of loosely coupled services, which implement business capabilities. The microservice exposes a RESTful API matching a [Swagger](http://swagger.io) definition.
+This application depicts the implementation of a Machine Learning microservice using Flask. A microservice is an individual component of an application that follows the **microservice architecture** - an architectural style that structures an application as a collection of loosely coupled services, which implement business capabilities. The microservice exposes a RESTful API matching a [Swagger](http://swagger.io) definition.
 
 ## Steps
 
-You can [deploy this application to IBM Cloud](https://cloud.ibm.com/developer/appservice/starter-kits/python-flask-app) or [build it locally](#building-locally) by cloning this repo first. After your app is live, you can access the `/health` endpoint to build out your cloud native application.
+You can [deploy this application to IBM Cloud](https://cloud.ibm.com/developer/appservice/starter-kits/python-flask-app) or [build it locally](#building-locally) by cloning this repo first. After your app is live, you can access the `/predict` endpoint to build out your cloud native application.
 
 ### Deploying to IBM Cloud
 
@@ -80,7 +74,7 @@ Your application is running at: `http://localhost:3000/` in your browser.
 
 - Your [Swagger UI](http://swagger.io/swagger-ui/) is running on: `/explorer`
 - Your Swagger definition is running on: `/swagger/api`
-- Health endpoint: `/health`
+- Health endpoint: `/predict`
 
 There are two different options for debugging a Flask project:
 

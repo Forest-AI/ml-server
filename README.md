@@ -84,7 +84,7 @@ You can also verify the state of your locally running application using the Sele
 
 > **Note for Windows users:** `gunicorn` is not supported on Windows. You may start the server with `python manage.py run` on your local machine or build and start the Dockerfile.
 
-#### IBM Cloud Developer Tools
+#### IBM Cloud Deployment 
 
 Install [IBM Cloud Developer Tools](https://cloud.ibm.com/docs/cli?topic=cloud-cli-getting-started) on your machine by running the following command:
 
@@ -92,34 +92,15 @@ Install [IBM Cloud Developer Tools](https://cloud.ibm.com/docs/cli?topic=cloud-c
 curl -sL https://ibm.biz/idt-installer | bash
 ```
 
-Create an application on IBM Cloud by running:
+Assuming you have completed ibmcloud-cli setup, Clone this repo
+
+
+move in this repo and the type:
 
 ```bash
-ibmcloud dev create
+ibmcloud app push
 ```
 
-This will create and download a starter application with the necessary files needed for local development and deployment.
-
-Your application will be compiled with Docker containers. To compile and run your app, run:
-
-```bash
-ibmcloud dev build
-ibmcloud dev run
-```
-
-This will launch your application locally. When you are ready to deploy to IBM Cloud on Cloud Foundry or Kubernetes, run one of the commands:
-
-```bash
-ibmcloud dev deploy -t buildpack // to Cloud Foundry
-ibmcloud dev deploy -t container // to K8s cluster
-```
-
-You can build and debug your app locally with:
-
-```bash
-ibmcloud dev build --debug
-ibmcloud dev debug
-```
 
 ## Next steps
 
